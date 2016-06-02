@@ -1,0 +1,514 @@
+/* - - - - - - - - - Variables - - - - - - - - - */
+$primary: #F44336;
+$secondary: #9E9E9E;
+$cloud: #ecf0f1;
+
+/* - - - - - - - - - Global - - - - - - - - - */
+* {
+  box-sizing: border-box;;
+}
+
+html, body {
+  font-family: 'Karla', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.wrapper {
+  width: 1440px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.flex-wrapper {
+  width: 1440px;
+  max-width: 90%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* - - - - - - - - - Default Header - - - - - - - - - */
+#main-header {
+  padding: 1.5em 0;
+  #nav-logo {
+    margin: 0;
+    float: left;
+    font-size: 1.7em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: $primary;
+    text-transform: uppercase;
+  }
+  .menu {
+    float: right;
+    i {
+      font-size: 1.7em;
+      color: $primary;
+      padding-top: .21em;
+    }
+  }
+  #main-nav {
+    display: none;
+    padding: 1em 0;
+    float: right;
+    width: 100%;
+    font-size: 0.9em;
+    color: $primary;
+  }
+  #main-nav.active {
+    display: flex;
+    justify-content: space-around;
+    a {
+      padding: 0.3em 0;
+      width: 30%;
+      color: $secondary;
+      font-size: 1.3em;
+      text-decoration: none;
+      text-align: center;
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+}
+
+/* - - - - - - - - - Default Banner - - - - - - - - - */
+#main-banner{
+  padding-top: 2em;
+  .intro {
+    h1 {
+      font-size: 1.25em;
+      color: $secondary;
+      span {
+        color: $primary;
+      }
+    }
+    .rw-sentence {
+      .cursor {
+        display: inline-block;
+        padding-right: 10px;
+        color: $secondary;
+      }
+
+      .rw-words {
+        display: inline-block;
+      }
+
+      .type{
+      	position: absolute;
+      	opacity: 0;
+      	overflow: hidden;
+      	-webkit-animation: words 16s steps(48) infinite 0s;
+      }
+      .type:nth-child(2) {
+        -webkit-animation-delay: 4s;
+        animation-delay: 4s;
+      }
+      .type:nth-child(3) {
+        -webkit-animation-delay: 8s;
+        animation-delay: 8s;
+      }
+      .type:nth-child(4) {
+        -webkit-animation-delay: 12s;
+      	animation-delay: 12s;
+      }
+      // .type:nth-child(5) {
+      //   -webkit-animation-delay: 16s;
+      // 	animation-delay: 16s;
+      // }
+      // .type:nth-child(6) {
+      //   -webkit-animation-delay: 20s;
+      // 	animation-delay: 20s;
+      // }
+
+      @-webkit-keyframes words {
+        0% { opacity: 0; width: 0; }
+        2% { opacity: 1;}
+        14% { opacity: 1; width: 12ch;}
+        15% { opacity: 0; }
+      }
+
+      span > span {
+      	animation: cursor 0.8s infinite;
+      }
+
+      @keyframes cursor {
+      	0% {
+      		opacity: 0;
+      	}
+      	20% {
+      		opacity: 0;
+      	}
+      	30% {
+      		opacity: 1;
+      	}
+      	90% {
+      		opacity: 1;
+      	}
+      	100% {
+      		opacity: 0;
+      	}
+      }
+    }
+  }
+}
+
+/* - - - - - - - - - Default Projects - - - - - - - - - */
+#projects {
+  .headline {
+    font-size: 1.2em;
+    text-align: center;
+  }
+  .project-wrapper {
+    flex-direction: column;
+    padding: 2em 0;
+    .project-slider {
+      .rslides {
+        position: relative;
+        list-style: none;
+        overflow: hidden;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        li {
+          -webkit-backface-visibility: hidden;
+          position: absolute;
+          display: none;
+          width: 100%;
+          left: 0;
+          top: 0;
+          &:first-child {
+            position: relative;
+            display: block;
+            float: left;
+          }
+        }
+        img {
+          display: block;
+          height: auto;
+          float: left;
+          width: 100%;
+          border: 0;
+          border-radius: 7px;
+        }
+      }
+      .rslides_tabs {
+        margin-top: 10px;
+        text-align: center;
+        padding: 0;
+        li {
+          display: inline;
+          float: none;
+          margin-right: 5px;
+          a {
+            color: #222;
+            text-indent: -9999px;
+            overflow: hidden;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 15px;
+            background: #ccc;
+            background: rgba(0,0,0, .2);
+            display: inline-block;
+            _display: block;
+            -webkit-box-shadow: inset 0 0 2px 0 rgba(0,0,0,.3);
+            -moz-box-shadow: inset 0 0 2px 0 rgba(0,0,0,.3);
+            box-shadow: inset 0 0 2px 0 rgba(0,0,0,.3);
+            width: 9px;
+            height: 9px;
+          }
+        }
+        .rslides_here {
+          a {
+            background: rgba(0,0,0, .8);
+          }
+        }
+      }
+    }
+
+    .project-description {
+      color: $cloud;
+      padding: 1em;
+      text-align: center;
+      .title {
+        margin: 0;
+      }
+      .project-link {
+      }
+      a {
+        text-decoration: none;
+        color: $cloud;
+      }
+    }
+  }
+  #noted {
+    background-color: #ff5600;
+  }
+  #localized {
+    background-color: #5BC0DE;
+  }
+}
+
+/* - - - - - - - - - Default Footer - - - - - - - - - */
+#nav-footer {
+  display: none;
+}
+
+#main-footer {
+  padding: 1em 0;
+  justify-content: space-between;
+  align-items: center;
+  a {
+    color: $secondary;
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+
+/* = = = = = = Larger Than Mobile = = = = = = */
+@media (min-width: 400px) {
+  /* - - - - - - - - - Larger Than Mobile Banner - - - - - - - - - */
+  #main-banner {
+    .intro {
+      font-size: 1.1em;
+    }
+  }
+}
+
+/* = = = = = = Larger Than Phablet = = = = = = */
+@media (min-width: 550px) {
+  /* - - - - - - - - - Larger Than Phablet(550px) Header - - - - - - - - - */
+  #main-header {
+    .menu i, #nav-logo {
+      font-size: 2em;
+    }
+  }
+  /* - - - - - - - - - Larger Than Phablet(550px) Banner - - - - - - - - - */
+  #main-banner {
+    .intro {
+      font-size: 1.5em;
+    }
+  }
+  /* - - - - - - - - - Larger Than Phablet(550px) Projects - - - - - - - - - */
+  #projects {
+    .project {
+      .project-wrapper {
+        .project-description {
+          .title {
+            font-size: 2.5em;
+          }
+          .caption {
+            font-size: 1.2em;
+          }
+          .project-link {
+            font-size: 1.5em;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* = = = = = = Larger Than Tablet = = = = = = */
+@media (min-width: 750px) {
+  #main-content {
+    margin-left: 10em;
+  }
+  /* - - - - - - - - - Larger Than Tablet(750px) Header - - - - - - - - - */
+  #main-header {
+    width: 10em;
+    height: 100%;
+    position: fixed;
+    float: left;
+    padding: 0;
+    #nav-logo {
+      width: 100%;
+      height: 1.5em;
+      text-align: center;
+      font-size: 5em;
+    }
+    .menu {
+      display: none;
+    }
+    #main-nav {
+      display: block;
+      position: absolute;
+      top: 30%;
+      a {
+        display: block;
+        margin: 2em 1em;
+        color: $secondary;
+        font-size: 1.5em;
+        text-decoration: none;
+        text-align: center;
+        &:hover {
+          color: $primary;
+        }
+        &:nth-last-child(1) {
+          display: none;
+        }
+        i {
+          display: none;
+        }
+      }
+    }
+  }
+
+  /* - - - - - - - - - Larger Than Tablet(750px) Banner - - - - - - - - - */
+  #main-banner{
+    padding: 0;
+    .intro {
+      margin: 0;
+      font-size: 1.73em;
+    }
+  }
+
+  /* - - - - - - - - - Larger Than Tablet(750px) Projects - - - - - - - - - */
+  #projects {
+    .project {
+      .project-wrapper {
+        .project-description {
+          .title {
+            font-size: 2.9em;
+          }
+          .caption {
+            font-size: 1.4em;
+          }
+          .project-link {
+            font-size: 1.7em;
+          }
+        }
+      }
+    }
+  }
+
+  /* - - - - - - - - - Larger Than Tablet(750px) Footer - - - - - - - - - */
+  #nav-footer {
+    display: block;
+    position: absolute;
+    bottom: 2em;
+
+    a {
+      display: block;
+      width: 20%;
+      margin: 2em auto;
+      color: $secondary;
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  #main-footer {
+    display: none;
+  }
+}
+
+/* = = = = = = Larger Than Desktop = = = = = = */
+@media (min-width: 1000px) {
+  /* - - - - - - - - - Larger Than Desktop(1000px) Header - - - - - - - - - */
+  #main-header {
+    #nav-logo {
+      padding-top: 0.2em;
+    }
+  }
+  /* - - - - - - - - - Larger Than Desktop(1000px) Banner - - - - - - - - - */
+  #main-content {
+    #main-banner {
+      .intro {
+        h1 {
+          font-size: 1.8em;
+        }
+      }
+    }
+  }
+  /* - - - - - - - - - Larger Than Desktop(1000px) Projects - - - - - - - - - */
+  #projects {
+    .project {
+      .project-wrapper {
+        justify-content: space-around;
+        flex-direction: row;
+        .project-slider {
+          padding-top: 1em;
+        }
+        .project-description {
+          width: 75%;
+          text-align: left;
+          padding: 0 1em;
+          .title {
+            font-size: 3em;
+            letter-spacing: 3px;
+          }
+          .caption {
+            margin-top: 0;
+            font-size: 1.4em;
+          }
+          .project-link {
+            font-size: 1.7em;
+          }
+        }
+      }
+      &:nth-child(even) {
+        .project-wrapper {
+          flex-direction: row-reverse;
+        }
+      }
+    }
+  }
+}
+
+/* = = = = = = Larger Than Desktop HD = = = = = = */
+@media (min-width: 1200px) {
+  /* - - - - - - - - - Larger Than Desktop HD(1200px) Header - - - - - - - - - */
+  #main-header {
+    #nav-logo {
+      padding-top: 0.25em;
+    }
+  }
+  /* - - - - - - - - - Larger Than Desktop HD(1200px) Banner - - - - - - - - - */
+  #main-content {
+    #main-banner {
+      .intro {
+        h1 {
+          font-size: 2em;
+        }
+      }
+    }
+  }
+  /* - - - - - - - - - Larger Than Desktop HD(1200px) Project - - - - - - - - - */
+  #projects {
+    .project {
+      .project-wrapper {
+        .project-description {
+          .title {
+            font-size: 3.5em;
+          }
+          .caption {
+            font-size: 1.6em;
+          }
+          .project-link {
+            font-size: 1.9em;
+          }
+        }
+      }
+    }
+  }
+}

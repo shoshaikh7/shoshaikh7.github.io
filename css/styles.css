@@ -1,0 +1,344 @@
+/* - - - - - - - - - Variables - - - - - - - - - */
+/* - - - - - - - - - Global - - - - - - - - - */
+* {
+  box-sizing: border-box; }
+
+html, body {
+  font-family: 'Karla', sans-serif; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400; }
+
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+.wrapper {
+  width: 1440px;
+  max-width: 90%;
+  margin: 0 auto; }
+
+.flex-wrapper {
+  width: 1440px;
+  max-width: 90%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex; }
+
+/* - - - - - - - - - Default Header - - - - - - - - - */
+#main-header {
+  padding: 1.5em 0; }
+  #main-header #nav-logo {
+    margin: 0;
+    float: left;
+    font-size: 1.7em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #F44336;
+    text-transform: uppercase; }
+  #main-header .menu {
+    float: right; }
+    #main-header .menu i {
+      font-size: 1.7em;
+      color: #F44336;
+      padding-top: .21em; }
+  #main-header #main-nav {
+    display: none;
+    padding: 1em 0;
+    float: right;
+    width: 100%;
+    font-size: 0.9em;
+    color: #F44336; }
+  #main-header #main-nav.active {
+    display: flex;
+    justify-content: space-around; }
+    #main-header #main-nav.active a {
+      padding: 0.3em 0;
+      width: 30%;
+      color: #9E9E9E;
+      font-size: 1.3em;
+      text-decoration: none;
+      text-align: center; }
+      #main-header #main-nav.active a:hover {
+        color: #F44336; }
+
+/* - - - - - - - - - Default Banner - - - - - - - - - */
+#main-banner {
+  padding-top: 2em; }
+  #main-banner .intro h1 {
+    font-size: 1.25em;
+    color: #9E9E9E; }
+    #main-banner .intro h1 span {
+      color: #F44336; }
+  #main-banner .intro .rw-sentence .cursor {
+    display: inline-block;
+    padding-right: 10px;
+    color: #9E9E9E; }
+  #main-banner .intro .rw-sentence .rw-words {
+    display: inline-block; }
+  #main-banner .intro .rw-sentence .type {
+    position: absolute;
+    opacity: 0;
+    overflow: hidden;
+    -webkit-animation: words 16s steps(48) infinite 0s; }
+  #main-banner .intro .rw-sentence .type:nth-child(2) {
+    -webkit-animation-delay: 4s;
+    animation-delay: 4s; }
+  #main-banner .intro .rw-sentence .type:nth-child(3) {
+    -webkit-animation-delay: 8s;
+    animation-delay: 8s; }
+  #main-banner .intro .rw-sentence .type:nth-child(4) {
+    -webkit-animation-delay: 12s;
+    animation-delay: 12s; }
+@-webkit-keyframes words {
+  0% {
+    opacity: 0;
+    width: 0; }
+  2% {
+    opacity: 1; }
+  14% {
+    opacity: 1;
+    width: 12ch; }
+  15% {
+    opacity: 0; } }
+  #main-banner .intro .rw-sentence span > span {
+    animation: cursor 0.8s infinite; }
+@keyframes cursor {
+  0% {
+    opacity: 0; }
+  20% {
+    opacity: 0; }
+  30% {
+    opacity: 1; }
+  90% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+/* - - - - - - - - - Default Projects - - - - - - - - - */
+#projects .headline {
+  font-size: 1.2em;
+  text-align: center; }
+#projects .project-wrapper {
+  flex-direction: column;
+  padding: 2em 0; }
+  #projects .project-wrapper .project-slider .rslides {
+    position: relative;
+    list-style: none;
+    overflow: hidden;
+    width: 100%;
+    padding: 0;
+    margin: 0; }
+    #projects .project-wrapper .project-slider .rslides li {
+      -webkit-backface-visibility: hidden;
+      position: absolute;
+      display: none;
+      width: 100%;
+      left: 0;
+      top: 0; }
+      #projects .project-wrapper .project-slider .rslides li:first-child {
+        position: relative;
+        display: block;
+        float: left; }
+    #projects .project-wrapper .project-slider .rslides img {
+      display: block;
+      height: auto;
+      float: left;
+      width: 100%;
+      border: 0;
+      border-radius: 7px; }
+  #projects .project-wrapper .project-slider .rslides_tabs {
+    margin-top: 10px;
+    text-align: center;
+    padding: 0; }
+    #projects .project-wrapper .project-slider .rslides_tabs li {
+      display: inline;
+      float: none;
+      margin-right: 5px; }
+      #projects .project-wrapper .project-slider .rslides_tabs li a {
+        color: #222;
+        text-indent: -9999px;
+        overflow: hidden;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        border-radius: 15px;
+        background: #ccc;
+        background: rgba(0, 0, 0, 0.2);
+        display: inline-block;
+        _display: block;
+        -webkit-box-shadow: inset 0 0 2px 0 rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: inset 0 0 2px 0 rgba(0, 0, 0, 0.3);
+        box-shadow: inset 0 0 2px 0 rgba(0, 0, 0, 0.3);
+        width: 9px;
+        height: 9px; }
+    #projects .project-wrapper .project-slider .rslides_tabs .rslides_here a {
+      background: rgba(0, 0, 0, 0.8); }
+  #projects .project-wrapper .project-description {
+    color: #ecf0f1;
+    padding: 1em;
+    text-align: center; }
+    #projects .project-wrapper .project-description .title {
+      margin: 0; }
+    #projects .project-wrapper .project-description a {
+      text-decoration: none;
+      color: #ecf0f1; }
+#projects #noted {
+  background-color: #ff5600; }
+#projects #localized {
+  background-color: #5BC0DE; }
+
+/* - - - - - - - - - Default Footer - - - - - - - - - */
+#nav-footer {
+  display: none; }
+
+#main-footer {
+  padding: 1em 0;
+  justify-content: space-between;
+  align-items: center; }
+  #main-footer a {
+    color: #9E9E9E; }
+    #main-footer a:hover {
+      color: #F44336; }
+
+/* = = = = = = Larger Than Mobile = = = = = = */
+@media (min-width: 400px) {
+  /* - - - - - - - - - Larger Than Mobile Banner - - - - - - - - - */
+  #main-banner .intro {
+    font-size: 1.1em; } }
+/* = = = = = = Larger Than Phablet = = = = = = */
+@media (min-width: 550px) {
+  /* - - - - - - - - - Larger Than Phablet(550px) Header - - - - - - - - - */
+  #main-header .menu i, #main-header #nav-logo {
+    font-size: 2em; }
+
+  /* - - - - - - - - - Larger Than Phablet(550px) Banner - - - - - - - - - */
+  #main-banner .intro {
+    font-size: 1.5em; }
+
+  /* - - - - - - - - - Larger Than Phablet(550px) Projects - - - - - - - - - */
+  #projects .project .project-wrapper .project-description .title {
+    font-size: 2.5em; }
+  #projects .project .project-wrapper .project-description .caption {
+    font-size: 1.2em; }
+  #projects .project .project-wrapper .project-description .project-link {
+    font-size: 1.5em; } }
+/* = = = = = = Larger Than Tablet = = = = = = */
+@media (min-width: 750px) {
+  #main-content {
+    margin-left: 10em; }
+
+  /* - - - - - - - - - Larger Than Tablet(750px) Header - - - - - - - - - */
+  #main-header {
+    width: 10em;
+    height: 100%;
+    position: fixed;
+    float: left;
+    padding: 0; }
+    #main-header #nav-logo {
+      width: 100%;
+      height: 1.5em;
+      text-align: center;
+      font-size: 5em; }
+    #main-header .menu {
+      display: none; }
+    #main-header #main-nav {
+      display: block;
+      position: absolute;
+      top: 30%; }
+      #main-header #main-nav a {
+        display: block;
+        margin: 2em 1em;
+        color: #9E9E9E;
+        font-size: 1.5em;
+        text-decoration: none;
+        text-align: center; }
+        #main-header #main-nav a:hover {
+          color: #F44336; }
+        #main-header #main-nav a:nth-last-child(1) {
+          display: none; }
+        #main-header #main-nav a i {
+          display: none; }
+
+  /* - - - - - - - - - Larger Than Tablet(750px) Banner - - - - - - - - - */
+  #main-banner {
+    padding: 0; }
+    #main-banner .intro {
+      margin: 0;
+      font-size: 1.73em; }
+
+  /* - - - - - - - - - Larger Than Tablet(750px) Projects - - - - - - - - - */
+  #projects .project .project-wrapper .project-description .title {
+    font-size: 2.9em; }
+  #projects .project .project-wrapper .project-description .caption {
+    font-size: 1.4em; }
+  #projects .project .project-wrapper .project-description .project-link {
+    font-size: 1.7em; }
+
+  /* - - - - - - - - - Larger Than Tablet(750px) Footer - - - - - - - - - */
+  #nav-footer {
+    display: block;
+    position: absolute;
+    bottom: 2em; }
+    #nav-footer a {
+      display: block;
+      width: 20%;
+      margin: 2em auto;
+      color: #9E9E9E; }
+      #nav-footer a:hover {
+        color: #F44336; }
+
+  #main-footer {
+    display: none; } }
+/* = = = = = = Larger Than Desktop = = = = = = */
+@media (min-width: 1000px) {
+  /* - - - - - - - - - Larger Than Desktop(1000px) Header - - - - - - - - - */
+  #main-header #nav-logo {
+    padding-top: 0.2em; }
+
+  /* - - - - - - - - - Larger Than Desktop(1000px) Banner - - - - - - - - - */
+  #main-content #main-banner .intro h1 {
+    font-size: 1.8em; }
+
+  /* - - - - - - - - - Larger Than Desktop(1000px) Projects - - - - - - - - - */
+  #projects .project .project-wrapper {
+    justify-content: space-around;
+    flex-direction: row; }
+    #projects .project .project-wrapper .project-slider {
+      padding-top: 1em; }
+    #projects .project .project-wrapper .project-description {
+      width: 75%;
+      text-align: left;
+      padding: 0 1em; }
+      #projects .project .project-wrapper .project-description .title {
+        font-size: 3em;
+        letter-spacing: 3px; }
+      #projects .project .project-wrapper .project-description .caption {
+        margin-top: 0;
+        font-size: 1.4em; }
+      #projects .project .project-wrapper .project-description .project-link {
+        font-size: 1.7em; }
+  #projects .project:nth-child(even) .project-wrapper {
+    flex-direction: row-reverse; } }
+/* = = = = = = Larger Than Desktop HD = = = = = = */
+@media (min-width: 1200px) {
+  /* - - - - - - - - - Larger Than Desktop HD(1200px) Header - - - - - - - - - */
+  #main-header #nav-logo {
+    padding-top: 0.25em; }
+
+  /* - - - - - - - - - Larger Than Desktop HD(1200px) Banner - - - - - - - - - */
+  #main-content #main-banner .intro h1 {
+    font-size: 2em; }
+
+  /* - - - - - - - - - Larger Than Desktop HD(1200px) Project - - - - - - - - - */
+  #projects .project .project-wrapper .project-description .title {
+    font-size: 3.5em; }
+  #projects .project .project-wrapper .project-description .caption {
+    font-size: 1.6em; }
+  #projects .project .project-wrapper .project-description .project-link {
+    font-size: 1.9em; } }
